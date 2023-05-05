@@ -1,0 +1,35 @@
+a* SPICE3 file created from hello.ext - technology: scmos
+
+.option scale=0.01u
+.include tsmc_025_level3.sp
+
+M1000 out in vdd vdd CMOSP w=300 l=200
++  ad=190000 pd=1800 as=190000 ps=1800
+M1001 out in 0  0    CMOSN w=300 l=200
++  ad=190000 pd=1800 as=190000 ps=1800
+
+C0 out 0 3.0fF
+C1 in  0 5.1fF
+
+Vin in gnd pwl (0p 0V 500p 0V 700ps 2.5V 1200ps 2.5V 1400ps 0V 1600ps 0V 1800 2.5V)
+vvdd vdd 0 DC 2.5
+
+.tran 10p 3000p
+
+.meas tran rise_t 
++trig v(out) val = 0.25 rise=1
++targ v(out) val = 2.25 fall=1
+
+.meas tran fall_t
++trig v(out) val = 2.25 fall=1
++targ v(out) val = 0.25 rise=1
+
+.meas tran delay_01 
++trig v(in)  val=1.25 fall=1
++targ v(out) val=1.25 rise=1
+
+.meas tran delay_10
++trig v(in)  val=1.25 rise=1
++targ v(out) val=1.25 fall=1
+
+.end
