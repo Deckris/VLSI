@@ -1,0 +1,28 @@
+* SPICE3 file created from homework1_1.ext - technology: scmos
+
+.option scale=0.01u
+
+M1001 out in 0 vdd CMOSP w=300 l=200
+*+  ad=19000 pd=1800 as=19000 ps=1800
+*M1002 out2 in out vdd CMOSP w=300 l=200
+*+  ad=19000 pd=1800 as=19000 ps=1800
+*M1003 out3 out2 Vdd 0 CMOSN w=300 l=200
+*+  ad=19000 pd=1800 as=19000 ps=1800
+
+.include tsmc025.sp
+.param supply = 2.5
+
+*C1 out 0 1pF
+
+Vdd vdd 0 DC 2.5
+
+Vin in 0 DC 0
+
+.tran 10p 1000ns
+
+.control
+	run
+	quit
+.endc
+
+.end  

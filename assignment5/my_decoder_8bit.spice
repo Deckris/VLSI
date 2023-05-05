@@ -1,0 +1,271 @@
+* SPICE3 file created from my_decoder_8bit.ext - technology: scmos
+
+.option scale=1u
+
+.MODEL nfet NMOS (                                 LEVEL  = 3                  
++ TOX    = 5.7E-9          NSUB   = 1E17            GAMMA  = 0.4317311          
++ PHI    = 0.7             VTO    = 0.4238252       DELTA  = 0                  
++ UO     = 425.6466519     ETA    = 0               THETA  = 0.1754054          
++ KP     = 2.501048E-4     VMAX   = 8.287851E4      KAPPA  = 0.1686779          
++ RSH    = 4.062439E-3     NFS    = 1E12            TPG    = 1                  
++ XJ     = 3E-7            LD     = 3.162278E-11    WD     = 1.232881E-8        
++ CGDO   = 6.2E-10         CGSO   = 6.2E-10         CGBO   = 1E-10              
++ CJ     = 1.81211E-3      PB     = 0.5             MJ     = 0.3282553          
++ CJSW   = 5.341337E-10    MJSW   = 0.5             )                           
+
+.MODEL pfet PMOS (                                 LEVEL  = 3                  
++ TOX    = 5.7E-9          NSUB   = 1E17            GAMMA  = 0.6348369          
++ PHI    = 0.7             VTO    = -0.5536085      DELTA  = 0                  
++ UO     = 250             ETA    = 0               THETA  = 0.1573195          
++ KP     = 5.194153E-5     VMAX   = 2.295325E5      KAPPA  = 0.7448494          
++ RSH    = 30.0776952      NFS    = 1E12            TPG    = -1                 
++ XJ     = 2E-7            LD     = 9.968346E-13    WD     = 5.475113E-9        
++ CGDO   = 6.66E-10        CGSO   = 6.66E-10        CGBO   = 1E-10              
++ CJ     = 1.893569E-3     PB     = 0.9906013       MJ     = 0.4664287          
++ CJSW   = 3.625544E-10    MJSW   = 0.5             )
+
+M1000 vdd a decoder_1bit_0/a_0_0# vdd pfet w=24 l=2
++  ad=3513 pd=1494 as=288 ps=120
+M1001 decoder_1bit_0/a_0_0# b vdd vdd pfet w=24 l=2
++  ad=0 pd=0 as=0 ps=0
+M1002 vdd c decoder_1bit_0/a_0_0# vdd pfet w=24 l=2
++  ad=0 pd=0 as=0 ps=0
+M1003 out7 decoder_1bit_0/a_0_0# vdd vdd pfet w=24 l=2
++  ad=120 pd=58 as=0 ps=0
+M1004 decoder_1bit_0/a_7_n43# a gnd gnd nfet w=4 l=2
++  ad=32 pd=24 as=377 ps=342
+M1005 decoder_1bit_0/a_17_n43# b decoder_1bit_0/a_7_n43# gnd nfet w=4 l=2
++  ad=28 pd=22 as=0 ps=0
+M1006 decoder_1bit_0/a_0_0# c decoder_1bit_0/a_17_n43# gnd nfet w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1007 out7 decoder_1bit_0/a_0_0# gnd gnd nfet w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1008 vdd a decoder_1bit_1/a_0_0# vdd pfet w=24 l=2
++  ad=0 pd=0 as=288 ps=120
+M1009 decoder_1bit_1/a_0_0# b vdd vdd pfet w=24 l=2
++  ad=0 pd=0 as=0 ps=0
+M1010 vdd c_bar decoder_1bit_1/a_0_0# vdd pfet w=24 l=2
++  ad=0 pd=0 as=0 ps=0
+M1011 out6 decoder_1bit_1/a_0_0# vdd vdd pfet w=24 l=2
++  ad=120 pd=58 as=0 ps=0
+M1012 decoder_1bit_1/a_7_n43# a gnd gnd nfet w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1013 decoder_1bit_1/a_17_n43# b decoder_1bit_1/a_7_n43# gnd nfet w=4 l=2
++  ad=28 pd=22 as=0 ps=0
+M1014 decoder_1bit_1/a_0_0# c_bar decoder_1bit_1/a_17_n43# gnd nfet w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1015 out6 decoder_1bit_1/a_0_0# gnd gnd nfet w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1016 vdd a decoder_1bit_2/a_0_0# vdd pfet w=24 l=2
++  ad=0 pd=0 as=288 ps=120
+M1017 decoder_1bit_2/a_0_0# b_bar vdd vdd pfet w=24 l=2
++  ad=0 pd=0 as=0 ps=0
+M1018 vdd c decoder_1bit_2/a_0_0# vdd pfet w=24 l=2
++  ad=0 pd=0 as=0 ps=0
+M1019 out5 decoder_1bit_2/a_0_0# vdd vdd pfet w=24 l=2
++  ad=120 pd=58 as=0 ps=0
+M1020 decoder_1bit_2/a_7_n43# a gnd gnd nfet w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1021 decoder_1bit_2/a_17_n43# b_bar decoder_1bit_2/a_7_n43# gnd nfet w=4 l=2
++  ad=28 pd=22 as=0 ps=0
+M1022 decoder_1bit_2/a_0_0# c decoder_1bit_2/a_17_n43# gnd nfet w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1023 out5 decoder_1bit_2/a_0_0# gnd gnd nfet w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1024 vdd a decoder_1bit_3/a_0_0# vdd pfet w=24 l=2
++  ad=0 pd=0 as=288 ps=120
+M1025 decoder_1bit_3/a_0_0# b_bar vdd vdd pfet w=24 l=2
++  ad=0 pd=0 as=0 ps=0
+M1026 vdd c_bar decoder_1bit_3/a_0_0# vdd pfet w=24 l=2
++  ad=0 pd=0 as=0 ps=0
+M1027 out4 decoder_1bit_3/a_0_0# vdd vdd pfet w=24 l=2
++  ad=120 pd=58 as=0 ps=0
+M1028 decoder_1bit_3/a_7_n43# a gnd gnd nfet w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1029 decoder_1bit_3/a_17_n43# b_bar decoder_1bit_3/a_7_n43# gnd nfet w=4 l=2
++  ad=28 pd=22 as=0 ps=0
+M1030 decoder_1bit_3/a_0_0# c_bar decoder_1bit_3/a_17_n43# gnd nfet w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1031 out4 decoder_1bit_3/a_0_0# gnd gnd nfet w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1032 vdd a_bar decoder_1bit_4/a_0_0# vdd pfet w=24 l=2
++  ad=0 pd=0 as=288 ps=120
+M1033 decoder_1bit_4/a_0_0# b vdd vdd pfet w=24 l=2
++  ad=0 pd=0 as=0 ps=0
+M1034 vdd c decoder_1bit_4/a_0_0# vdd pfet w=24 l=2
++  ad=0 pd=0 as=0 ps=0
+M1035 out3 decoder_1bit_4/a_0_0# vdd vdd pfet w=24 l=2
++  ad=120 pd=58 as=0 ps=0
+M1036 decoder_1bit_4/a_7_n43# a_bar gnd gnd nfet w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1037 decoder_1bit_4/a_17_n43# b decoder_1bit_4/a_7_n43# gnd nfet w=4 l=2
++  ad=28 pd=22 as=0 ps=0
+M1038 decoder_1bit_4/a_0_0# c decoder_1bit_4/a_17_n43# gnd nfet w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1039 out3 decoder_1bit_4/a_0_0# gnd gnd nfet w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+
+M1040 vdd a_bar decoder_1bit_5/a_0_0# vdd pfet w=24 l=2
++  ad=0 pd=0 as=288 ps=120
+M1041 decoder_1bit_5/a_0_0# b vdd vdd pfet w=24 l=2
++  ad=0 pd=0 as=0 ps=0
+M1042 vdd c_bar decoder_1bit_5/a_0_0# vdd pfet w=24 l=2
++  ad=0 pd=0 as=0 ps=0
+M1043 out2 decoder_1bit_5/a_0_0# vdd vdd pfet w=24 l=2
++  ad=120 pd=58 as=0 ps=0
+M1044 decoder_1bit_5/a_7_n43# a_bar gnd gnd nfet w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1045 decoder_1bit_5/a_17_n43# b decoder_1bit_5/a_7_n43# gnd nfet w=4 l=2
++  ad=28 pd=22 as=0 ps=0
+M1046 decoder_1bit_5/a_0_0# c_bar decoder_1bit_5/a_17_n43# gnd nfet w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1047 out2 decoder_1bit_5/a_0_0# gnd gnd nfet w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+
+M1048 vdd a_bar decoder_1bit_6/a_0_0# vdd pfet w=24 l=2
++  ad=0 pd=0 as=288 ps=120
+M1049 decoder_1bit_6/a_0_0# b_bar vdd vdd pfet w=24 l=2
++  ad=0 pd=0 as=0 ps=0
+M1050 vdd c decoder_1bit_6/a_0_0# vdd pfet w=24 l=2
++  ad=0 pd=0 as=0 ps=0
+M1051 out1 decoder_1bit_6/a_0_0# vdd vdd pfet w=24 l=2
++  ad=120 pd=58 as=0 ps=0
+M1052 decoder_1bit_6/a_7_n43# a_bar gnd gnd nfet w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1053 decoder_1bit_6/a_17_n43# b_bar decoder_1bit_6/a_7_n43# gnd nfet w=4 l=2
++  ad=28 pd=22 as=0 ps=0
+M1054 decoder_1bit_6/a_0_0# c decoder_1bit_6/a_17_n43# gnd nfet w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1055 out1 decoder_1bit_6/a_0_0# gnd gnd nfet w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+
+M1056 vdd a_bar decoder_1bit_7/a_0_0# vdd pfet w=24 l=2
++  ad=0 pd=0 as=288 ps=120
+M1057 decoder_1bit_7/a_0_0# b_bar vdd vdd pfet w=24 l=2
++  ad=0 pd=0 as=0 ps=0
+M1058 vdd c_bar decoder_1bit_7/a_0_0# vdd pfet w=24 l=2
++  ad=0 pd=0 as=0 ps=0
+M1059 out0 decoder_1bit_7/a_0_0# vdd vdd pfet w=24 l=2
++  ad=120 pd=58 as=0 ps=0
+M1060 decoder_1bit_7/a_7_n43# a_bar gnd gnd nfet w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1061 decoder_1bit_7/a_17_n43# b_bar decoder_1bit_7/a_7_n43# gnd nfet w=4 l=2
++  ad=28 pd=22 as=0 ps=0
+M1062 decoder_1bit_7/a_0_0# c_bar decoder_1bit_7/a_17_n43# gnd nfet w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1063 out0 decoder_1bit_7/a_0_0# gnd gnd nfet w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+
+M1064 c_bar c vdd vdd pfet w=12 l=2
++  ad=19 pd=18 as=0 ps=0
+M1065 c_bar c gnd gnd nfet w=3 l=2
++  ad=19 pd=18 as=0 ps=0
+
+M1066 b_bar b vdd vdd pfet w=12 l=2
++  ad=19 pd=18 as=0 ps=0
+M1067 b_bar b gnd gnd nfet w=3 l=2
++  ad=19 pd=18 as=0 ps=0
+
+M1068 a_bar a vdd vdd pfet w=12 l=2
++  ad=19 pd=18 as=0 ps=0
+M1069 a_bar a gnd gnd nfet w=3 l=2
++  ad=19 pd=18 as=0 ps=0
+
+C0 c vdd 4.8fF
+C1 c c_bar 2.2fF
+C2 vdd b_bar 6.0fF
+C3 c_bar b_bar 4.1fF
+C4 vdd c_bar 4.8fF
+C5 gnd vdd 5.8fF
+C6 c a 3.4fF
+C7 c b 2.4fF
+C8 c a_bar 3.4fF
+C9 b_bar a_bar 3.6fF
+C10 vdd a 4.8fF
+C11 b vdd 3.6fF
+C12 c_bar a 2.6fF
+C13 vdd a_bar 4.8fF
+C14 c_bar a_bar 3.4fF
+C15 b a 3.4fF
+C16 c b_bar 4.3fF
+C17 b a_bar 3.1fF
+C18 a_bar gnd 145.3fF
+C19 a gnd 223.4fF
+C20 b_bar gnd 193.9fF
+C21 b gnd 196.9fF
+C22 c_bar gnd 198.5fF
+C23 c gnd 217.4fF
+C24 gnd gnd 137.4fF
+C25 out0 gnd 13.0fF
+C26 decoder_1bit_7/a_0_0# gnd 25.0fF
+C27 vdd gnd 193.8fF
+C28 out1 gnd 13.0fF
+C29 decoder_1bit_6/a_0_0# gnd 25.0fF
+C30 out2 gnd 13.0fF
+C31 decoder_1bit_5/a_0_0# gnd 25.0fF
+C32 out3 gnd 13.0fF
+C33 decoder_1bit_4/a_0_0# gnd 25.0fF
+C34 out4 gnd 13.0fF
+C35 decoder_1bit_3/a_0_0# gnd 25.0fF
+C36 out5 gnd 13.0fF
+C37 decoder_1bit_2/a_0_0# gnd 25.0fF
+C38 out6 gnd 13.0fF
+C39 decoder_1bit_1/a_0_0# gnd 25.0fF
+C40 out7 gnd 14.7fF
+C41 decoder_1bit_0/a_0_0# gnd 25.0fF
+
+vvdd vdd 0 DC 2.5
+
+*Va a 0 DC 0
+*Vb b 0 DC 2.5
+*Vc c 0 DC 2.5
+
+*Va a 0 pwl (0p 0 20n 0 20.1n 2.5 40n 2.5 40.1n)
+*Vb b 0 pwl (0p 0 10n 0 10.1n 2.5 20n 2.5 20.1n 0 30n 0 30.1n 2.5 40n 2.5)
+*Vc c 0 pwl (0p 0 5n  0 5.1n  2.5 10n 2.5 10.1n 0 15n 0 15.1n 2.5 20n 2.5
+*+        20.1n 0 25n 0 25.1n 2.5 30n 2.5 30.1n 0 35n 0 35.1n 2.5 40n 2.5)
+
+Va a 0 pulse (0 2.5 100n 0.1n 0.1n 100n 200n)
+Vb b 0 pulse (0 2.5 50n 0.1n 0.1n 50n 100n)
+Vc c 0 pulse (0 2.5 25n 0.1n 0.1n 25n 50n)
+
+.tran 10p 200n 
+
+.meas tran out0_rise_t 
++trig v(out0) val = 0.25 rise=last
++targ v(out0) val = 2.25 rise=last
+
+.meas tran out1_rise_t 
++trig v(out1) val = 0.25 rise=last
++targ v(out1) val = 2.25 rise=last
+
+.meas tran out2_rise_t 
++trig v(out2) val = 0.25 rise=last
++targ v(out2) val = 2.25 rise=last
+
+.meas tran out3_rise_t 
++trig v(out3) val = 0.25 rise=last
++targ v(out3) val = 2.25 rise=last
+
+.meas tran out4_rise_t 
++trig v(out4) val = 0.25 rise=last
++targ v(out4) val = 2.25 rise=last
+
+.meas tran out5_rise_t 
++trig v(out5) val = 0.25 rise=last
++targ v(out5) val = 2.25 rise=last
+
+.meas tran out6_rise_t 
++trig v(out6) val = 0.25 rise=last
++targ v(out6) val = 2.25 rise=last
+
+.meas tran out7_rise_t 
++trig v(out7) val = 0.25 rise=last
++targ v(out7) val = 2.25 rise=last
+
+.control
+ run
+ plot out0 out1 out2 out3 out4 out5 out6 out7 
+.endc
+
+.end

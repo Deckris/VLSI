@@ -1,0 +1,42 @@
+* SPICE3 file created from /home/prog1/Documents/VLSI/Homeworks/assignment3/faoi22.ext - technology: scmos
+
+.option scale=1u
+.include "tsmc_025_level3.sp"
+
+M1000 a_n9_23# A vdd vdd CMOSP w=15 l=2
++  ad=180 pd=84 as=150 ps=80
+M1001 out B a_n9_23# vdd CMOSP w=15 l=2
++  ad=90 pd=42 as=0 ps=0
+M1002 a_n9_23# D out vdd CMOSP w=15 l=2
++  ad=0 pd=0 as=0 ps=0
+M1003 vdd C a_n9_23# vdd CMOSP w=15 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 out A gnd Gnd CMOSN w=6 l=2
++  ad=36 pd=24 as=66 ps=46
+M1005 a_n1_3# B out Gnd CMOSN w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1006 gnd D a_n1_3# Gnd CMOSN w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1007 a_15_3# C gnd Gnd CMOSN w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+
+C0 a_n9_23# vdd 3.4fF
+C1 gnd gnd 4.6fF
+C2 out gnd 3.7fF
+C3 vdd gnd 13.4fF
+
+vvdd vdd 0 DC 2.5
+
+V1 A 0 pulse (2.5 0 0 0.1u 0.1u 50u 100u)
+V2 B 0 pulse (2.5 0 0 0.1u 0.1u 50u 100u)
+V3 C 0 pulse (2.5 0 0 0.1u 0.1u 50u 100u)
+V4 D 0 pulse (2.5 0 0 0.1u 0.1u 50u 100u)
+
+.tran 1u 100u
+
+.control 
+  run
+  plot out
+.endc 
+
+.end

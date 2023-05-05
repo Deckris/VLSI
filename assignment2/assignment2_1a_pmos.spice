@@ -1,0 +1,19 @@
+a* SPICE3 file created from hello.ext - technology: scmos
+
+.include tsmc_025_level3.sp
+
+M1001 Out1 In1 Vdd Vdd CMOSP W=3u L=2u
+
+Vvdd Vdd 0 DC 2.5
+
+Vgs1 In1 Vdd  DC -2.5
+Vds1 Out1 Vdd DC 0
+
+.dc Vds1 0 -2.5 -0.25 Vgs1 0 -2.5 -0.25
+
+.control
+    run
+    plot -i(Vds1)
+.endc
+
+.end 

@@ -1,0 +1,38 @@
+* SPICE3 file created from faoi21.ext - technology: scmos
+
+.option scale=1u
+.include "tsmc_025_level3.sp"
+
+M1000 a_n7_27# A out vdd CMOSP w=15 l=2
++  ad=165 pd=82 as=75 ps=40
+M1001 vdd B a_n7_27# vdd CMOSP w=15 l=2
++  ad=90 pd=42 as=0 ps=0
+M1002 a_n7_27# C vdd vdd CMOSP w=15 l=2
++  ad=0 pd=0 as=0 ps=0
+M1003 out A gnd Gnd CMOSN w=3 l=2
++  ad=33 pd=24 as=49 ps=40
+M1004 a_1_4# B out Gnd CMOSN w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1005 gnd C a_1_4# Gnd CMOSN w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+
+C0 gnd gnd 5.0fF
+C1 a_n7_27# gnd 3.7fF
+C2 out gnd 4.4fF
+C3 vdd gnd 4.3fF
+
+vvdd vdd 0 DC 2.5
+
+V1 A 0 pulse (2.5 0 0 0.1u 0.1u 50u 100u)
+V2 B 0 pulse (2.5 0 0 0.1u 0.1u 50u 100u)
+V3 C 0 pulse (2.5 0 0 0.1u 0.1u 50u 100u)
+V4 D 0 pulse (2.5 0 0 0.1u 0.1u 50u 100u)
+
+.tran 1u 100u
+
+.control 
+  run
+  plot out
+.endc 
+
+.end

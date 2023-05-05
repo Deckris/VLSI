@@ -1,0 +1,41 @@
+timestamp 1639419515
+version 8.0
+tech scmos
+style lambda=1.0(scna20_orb)
+scale 1000 1 100
+resistclasses 26670 59550 23860 19690 27260 2000000 49 26 2505830
+node "a_n24_15#" 156 3760 -24 15 ndiff 66 46 0 0 0 0 0 0 0 0 0 0 140 86 0 0 0 0
+node "a_n36_15#" 80 0 -36 15 ndiff 12 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "gnd" 986 4512 -43 7 ppc 66 46 64 64 0 0 0 0 0 0 0 0 208 112 0 0 0 0
+node "a_n24_37#" 481 3008 -24 37 pdiff 0 0 165 82 0 0 0 0 0 0 0 0 204 118 0 0 0 0
+node "out" 176 2820 -32 15 ndiff 36 24 90 42 0 0 0 0 0 0 0 0 148 82 0 0 0 0
+node "a_n36_37#" 447 0 -36 37 pdiff 0 0 30 34 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "A" 1336 19596 -34 13 p 0 0 0 0 236 234 0 0 0 0 0 0 72 44 0 0 0 0
+node "vdd" 637 4512 -43 37 pdc 32 32 165 82 0 0 0 0 0 0 0 0 280 148 0 0 0 0
+node "B" 1504 26252 -41 70 pc 0 0 0 0 268 264 0 0 0 0 0 0 144 80 0 0 0 0
+node "C" 811 12220 -27 77 pc 0 0 0 0 144 144 0 0 0 0 0 0 16 16 0 0 0 0
+node "w_n43_36#" 6265 0 -43 36 nw 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 640 112
+cap "vdd" "B" 240
+cap "A" "w_n43_36#" 1116
+cap "A" "C" 240
+cap "a_n24_15#" "A" 180
+cap "vdd" "C" 240
+cap "B" "w_n43_36#" 1116
+cap "B" "C" 240
+cap "a_n24_15#" "B" 180
+cap "C" "w_n43_36#" 558
+cap "a_n24_37#" "A" 180
+cap "a_n24_37#" "B" 180
+cap "a_n24_37#" "w_n43_36#" 376
+cap "out" "w_n43_36#" 188
+cap "A" "vdd" 480
+device mosfet nfet -10 15 -9 16 2 6 "Gnd!" "B" 4 0 "gnd" 6 0 "a_n24_15#" 6 0
+device mosfet nfet -18 15 -17 16 2 6 "Gnd!" "A" 4 0 "a_n24_15#" 6 0 "gnd" 6 0
+device mosfet nfet -26 15 -25 16 2 6 "Gnd!" "C" 4 0 "out" 6 0 "a_n24_15#" 6 0
+device mosfet nfet -34 15 -33 16 2 6 "Gnd!" "A" 4 0 "a_n36_15#" 6 0 "out" 6 0
+device mosfet nfet -38 15 -37 16 2 6 "Gnd!" "B" 4 0 "gnd" 6 0 "a_n36_15#" 6 0
+device mosfet pfet -10 37 -9 38 2 15 "w_n43_36#" "B" 4 0 "vdd" 15 0 "a_n24_37#" 15 0
+device mosfet pfet -18 37 -17 38 2 15 "w_n43_36#" "A" 4 0 "a_n24_37#" 15 0 "vdd" 15 0
+device mosfet pfet -26 37 -25 38 2 15 "w_n43_36#" "C" 4 0 "out" 15 0 "a_n24_37#" 15 0
+device mosfet pfet -34 37 -33 38 2 15 "w_n43_36#" "A" 4 0 "a_n36_37#" 15 0 "out" 15 0
+device mosfet pfet -38 37 -37 38 2 15 "w_n43_36#" "B" 4 0 "vdd" 15 0 "a_n36_37#" 15 0

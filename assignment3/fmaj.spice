@@ -1,0 +1,48 @@
+* SPICE3 file created from fmaj.ext - technology: scmos
+
+.option scale=1u
+.include "tsmc_025_level3.sp"
+
+M1000 a_n36_37# B vdd w_n43_36# CMOSP w=15 l=2
++  ad=30 pd=34 as=165 ps=82
+M1001 out A a_n36_37# w_n43_36# CMOSP w=15 l=2
++  ad=90 pd=42 as=0 ps=0
+M1002 a_n24_37# C out w_n43_36# CMOSP w=15 l=2
++  ad=165 pd=82 as=0 ps=0
+M1003 vdd A a_n24_37# w_n43_36# CMOSP w=15 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 a_n24_37# B vdd w_n43_36# CMOSP w=15 l=2
++  ad=0 pd=0 as=0 ps=0
+M1005 a_n36_15# B gnd Gnd CMOSN w=6 l=2
++  ad=12 pd=16 as=66 ps=46
+M1006 out A a_n36_15# Gnd CMOSN w=6 l=2
++  ad=36 pd=24 as=0 ps=0
+M1007 a_n24_15# C out Gnd CMOSN w=6 l=2
++  ad=66 pd=46 as=0 ps=0
+M1008 gnd A a_n24_15# Gnd CMOSN w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1009 a_n24_15# B gnd Gnd CMOSN w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+
+C0 a_n24_15# gnd 4.1fF
+C1 gnd gnd 4.5fF
+C2 a_n24_37# gnd 3.4fF
+C3 out gnd 2.8fF
+C4 vdd gnd 5.5fF
+C5 w_n43_36# gnd 2.8fF
+
+vvdd vdd 0 DC 2.5
+
+V1 A 0 pulse (2.5 0 0 0.1u 0.1u 50u 100u)
+V2 B 0 pulse (2.5 0 0 0.1u 0.1u 50u 100u)
+V3 C 0 pulse (2.5 0 0 0.1u 0.1u 50u 100u)
+V4 D 0 pulse (2.5 0 0 0.1u 0.1u 50u 100u)
+
+.tran 1u 100u
+
+.control 
+  run
+  plot out
+.endc 
+
+.end

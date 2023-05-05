@@ -1,0 +1,24 @@
+*Hello
+
+.include tsmc_025_level3.sp
+
+M1001 2 1 0 0 CMOSN W=3u L=2u
+
+C1 2 0 1F
+Vvdd 3 0 DC 2.5 
+
+Vgs 1 0 DC 1024
+Vds 2 0 DC 0
+
+.dc Vds 0 2.5 0.25 Vgs 0 2.5 0.25
+
+.control
+    run
+    set color0 = white
+    set color1 = black
+    set color2 = blue
+    plot -i(vds)
+.endc
+
+.end
+ 

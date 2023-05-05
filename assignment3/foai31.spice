@@ -1,0 +1,42 @@
+* SPICE3 file created from foai31.ext - technology: scmos
+
+.option scale=1u
+.include "tsmc_025_level3.sp"
+
+M1000 a_n23_15# A vdd vdd CMOSP w=3 l=2
++  ad=18 pd=18 as=38 ps=36
+M1001 a_n15_15# C a_n23_15# vdd CMOSP w=3 l=2
++  ad=18 pd=18 as=0 ps=0
+M1002 out B a_n15_15# vdd CMOSP w=3 l=2
++  ad=22 pd=20 as=0 ps=0
+M1003 vdd D out vdd CMOSP w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 a_n23_n4# A gnd Gnd CMOSN w=3 l=2
++  ad=44 pd=40 as=41 ps=38
+M1005 gnd C a_n23_n4# Gnd CMOSN w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1006 a_n23_n4# B gnd Gnd CMOSN w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1007 out D a_n23_n4# Gnd CMOSN w=3 l=2
++  ad=19 pd=18 as=0 ps=0
+
+C0 a_n23_n4# gnd 3.7fF
+C1 gnd gnd 3.8fF
+C2 out gnd 3.8fF
+C3 vdd gnd 10.8fF
+
+vvdd vdd 0 DC 2.5
+
+V1 A 0 pulse (2.5 0 0 0.1u 0.1u 50u 100u)
+V2 B 0 pulse (2.5 0 0 0.1u 0.1u 50u 100u)
+V3 C 0 pulse (2.5 0 0 0.1u 0.1u 50u 100u)
+V4 D 0 pulse (2.5 0 0 0.1u 0.1u 50u 100u)
+
+.tran 1u 100u
+
+.control 
+  run
+  plot out
+.endc 
+
+.end
